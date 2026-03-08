@@ -144,8 +144,8 @@ Department of Artificial Intelligence & Machine Learning.
 | Name | Role |
 |---|---|
 | **Drishti Verma** | AI/ML Researcher |
-| **Arush Pradhan** | Full Stack Engineer |
-| **Aarav Parikh** | System Architect |
+| **Arush Pradhan** | DL implementation|
+| **Aarav Parikh** | Frontend Developer |
 
 ---
 

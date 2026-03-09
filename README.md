@@ -31,7 +31,7 @@ This project provides an **Adaptive Hybrid Feature Fusion** framework combining:
 - **Radiomics** for mathematical texture and morphology extraction
 - **Explainable AI** via Grad-CAM heatmaps *(In Progress)* for clinical transparency
 
-> Tested on **10,000+ images** from the **CBIS-DDSM** dataset — achieving **86.5% accuracy** and an **AUC of 0.765** in Phase 5 evaluation, with ongoing training targeting **0.935 AUC**.
+> Tested on **10,000+ images** from the **CBIS-DDSM** dataset — achieving a **Validation Accuracy of 72.46%**, a **Validation AUC of 0.7927**, and a **BI-RADS Task Accuracy of 62.60%**.
 
 ---
 
@@ -55,8 +55,9 @@ This project provides an **Adaptive Hybrid Feature Fusion** framework combining:
 
 | Metric | Value |
 |---|---|
-| **AUC Score** | 0.765 *(Phase 5 — ongoing)* |
-| **Accuracy** | 86.5% |
+| **Validation AUC** | 0.7927 |
+| **Validation Accuracy** | 72.46% |
+| **BI-RADS Task Accuracy** | 62.60% |
 | **Dataset** | CBIS-DDSM |
 | **Training Images** | 10,000+ |
 

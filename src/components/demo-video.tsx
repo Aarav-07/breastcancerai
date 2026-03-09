@@ -14,8 +14,8 @@ export function DemoVideo() {
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg pt-2">
             Tested on the CBIS-DDSM dataset. The ROC curve below demonstrates the model&apos;s
-            diagnostic discrimination — achieving an AUC of <strong className="text-[#EC4899]">0.765</strong> in Phase 5 evaluation,
-            with continued training ongoing to improve towards the target <strong className="text-[#EC4899]">0.935 AUC</strong>.
+            diagnostic discrimination — achieving an AUC of <strong className="text-[#EC4899]">0.7927</strong> on the validation set,
+            with a validation accuracy of <strong className="text-[#EC4899]">72.46%</strong> and a BI-RADS task accuracy of <strong className="text-[#EC4899]">62.60%</strong>.
           </p>
         </div>
 
@@ -31,8 +31,8 @@ export function DemoVideo() {
             <div className="relative rounded-2xl overflow-hidden bg-white flex items-center justify-center">
               <div className="w-full max-w-[500px] mx-auto">
                 <Image
-                  src="/roc_curve.png"
-                  alt="ROC Curve - Breast Cancer Detection (AUC = 0.765)"
+                  src="/WhatsApp Image 2026-03-09 at 5.27.20 AM.jpeg"
+                  alt="ROC Curve - Breast Cancer Detection (AUC = 0.7927)"
                   width={900}
                   height={640}
                   className="w-full h-auto rounded-2xl object-contain"
@@ -42,16 +42,20 @@ export function DemoVideo() {
             </div>
 
             {/* Stats row */}
-            <div className="grid grid-cols-3 gap-4 mt-6 border-t border-pink-100 pt-6">
+            <div className="grid grid-cols-4 gap-4 mt-6 border-t border-pink-100 pt-6">
               <div className="text-center">
-                <p className="text-2xl font-extrabold text-[#EC4899]">0.765</p>
-                <p className="text-xs text-slate-500 mt-1 font-medium">Current AUC</p>
+                <p className="text-2xl font-extrabold text-[#EC4899]">0.7927</p>
+                <p className="text-xs text-slate-500 mt-1 font-medium">Validation AUC</p>
               </div>
-              <div className="text-center border-x border-pink-100">
-                <p className="text-2xl font-extrabold text-[#EC4899]">86.5%</p>
-                <p className="text-xs text-slate-500 mt-1 font-medium">Accuracy</p>
+              <div className="text-center border-l border-pink-100">
+                <p className="text-2xl font-extrabold text-[#EC4899]">72.46%</p>
+                <p className="text-xs text-slate-500 mt-1 font-medium">Val. Accuracy</p>
               </div>
-              <div className="text-center">
+              <div className="text-center border-l border-pink-100">
+                <p className="text-2xl font-extrabold text-[#EC4899]">62.60%</p>
+                <p className="text-xs text-slate-500 mt-1 font-medium">BI-RADS Accuracy</p>
+              </div>
+              <div className="text-center border-l border-pink-100">
                 <p className="text-2xl font-extrabold text-[#EC4899]">10k+</p>
                 <p className="text-xs text-slate-500 mt-1 font-medium">Images Tested</p>
               </div>

@@ -8,7 +8,7 @@ export function Problem() {
   const problems = [
     {
       title: "Diagnostic Challenges",
-      description: "Manual mammogram interpretation is challenging due to subtle patterns and complex tissue variations that are easy to miss.",
+      description: "Manual interpretation of medical data and imaging is challenging due to subtle patterns and complex tissue variations that are easy to miss.",
       icon: <AlertCircle className="w-10 h-10 text-[#EC4899] mb-4" strokeWidth={1.5} />,
       delay: 0.1,
     },
@@ -34,7 +34,7 @@ export function Problem() {
             The Diagnostics Gap
           </h2>
           <p className="text-lg text-slate-600">
-            Why AI-assisted mammogram analysis is crucial for modern healthcare.
+            Why AI-assisted medical data analysis is crucial for modern healthcare.
           </p>
         </div>
 

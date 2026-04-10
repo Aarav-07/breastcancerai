@@ -1,15 +1,25 @@
 "use client"
 
+import { useRef } from "react"
 import { Card } from "./ui/card"
-import { motion } from "framer-motion"
-import { Upload, Cpu, ShieldCheck, Eye, ArrowDown } from "lucide-react"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { Upload, Cpu, ShieldCheck, Eye } from "lucide-react"
 
 export function HowItWorks() {
+  const containerRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end end"]
+  })
+
+  // Animate the height of the connecting line from 0% to 100%
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+
   const steps = [
     {
       id: "01",
-      title: "Upload Mammogram",
-      description: "Securely input the imaging data directly into the system.",
+      title: "Upload Mammogram / Data Entry",
+      description: "Securely input imaging and clinical data directly into the system.",
       icon: <Upload className="w-6 h-6 text-white" />,
     },
     {
@@ -33,7 +43,7 @@ export function HowItWorks() {
   ]
 
   return (
-    <section id="workflow" className="py-24 bg-white relative overflow-hidden">
+    <section id="workflow" ref={containerRef} className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight mb-6">
@@ -45,8 +55,14 @@ export function HowItWorks() {
         </div>
 
         <div className="relative">
-          {/* Timeline Connector */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-pink-100 via-pink-300 to-pink-100 -translate-x-1/2"></div>
+          {/* Timeline Connector Background (Faint) */}
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-pink-100/50 -translate-x-1/2"></div>
+          
+          {/* Animated Timeline Line (Scroll Driven) */}
+          <motion.div 
+            style={{ height: lineHeight }}
+            className="hidden md:block absolute left-1/2 top-0 w-1 bg-gradient-to-b from-[#F472B6] via-[#EC4899] to-[#BE185D] -translate-x-1/2 z-0 origin-top rounded-full shadow-[0_0_15px_rgba(236,72,153,0.5)]"
+          ></motion.div>
           
           <div className="space-y-12 relative z-10">
             {steps.map((step, index) => {
@@ -56,8 +72,8 @@ export function HowItWorks() {
                   key={step.id}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.8 }}
                   className={`flex flex-col md:flex-row items-center ${
                     isEven ? "md:flex-row-reverse" : ""
                   }`}
@@ -87,24 +103,6 @@ export function HowItWorks() {
               )
             })}
 
-            {/* Final Step Centered */}
-            <motion.div
-               initial={{ opacity: 0, scale: 0.9 }}
-               whileInView={{ opacity: 1, scale: 1 }}
-               viewport={{ once: true, margin: "-100px" }}
-               transition={{ duration: 0.8 }}
-               className="pt-12 flex justify-center mt-12 relative"
-            >
-                <Card className="max-w-md w-full text-center p-8 bg-gradient-to-br from-pink-500 to-[#BE185D] text-white border-none shadow-[0_20px_50px_-15px_rgba(236,72,153,0.6)]">
-                    <div className="w-16 h-16 mx-auto bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
-                        <Eye className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3 text-white">5. Explainable Heatmap</h3>
-                    <p className="text-white/80">
-                        The final output includes a Grad-CAM (In Progress) overlay that visually grounds the prediction, showing clinicians exactly where the model is looking.
-                    </p>
-                </Card>
-            </motion.div>
           </div>
         </div>
       </div>

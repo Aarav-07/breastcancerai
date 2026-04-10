@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <b>An AI-powered clinical decision support tool designed to assist radiologists in detecting breast cancer from mammograms with explainability and precision.</b>
+  <b>An AI-powered clinical decision support tool designed to assist radiologists in detecting breast cancer from medical imaging and clinical data with explainability and precision.</b>
 </p>
 
 <p align="center">
@@ -24,12 +24,11 @@
 
 ## 📌 About the Project
 
-Breast cancer is one of the leading causes of health concerns globally. Early and accurate detection is the most powerful tool for survival. Manual interpretation of mammograms is challenging due to subtle patterns and dense tissue variations that are easy to overlook.
+Breast cancer is one of the leading causes of health concerns globally. Early and accurate detection is the most powerful tool for survival. Manual interpretation of clinical data and imaging is challenging due to subtle patterns and dense tissue variations that are easy to overlook.
 
 This project provides an **Adaptive Hybrid Feature Fusion** framework combining:
 - **Deep Learning** (ResNet50) for visual pattern recognition
 - **Radiomics** for mathematical texture and morphology extraction
-- **Explainable AI** via Grad-CAM heatmaps *(In Progress)* for clinical transparency
 
 > Tested on **10,000+ images** from the **CBIS-DDSM** dataset — achieving a **Validation Accuracy of 72.46%**, a **Validation AUC of 0.7927**, and a **BI-RADS Task Accuracy of 62.60%**.
 
@@ -39,10 +38,9 @@ This project provides an **Adaptive Hybrid Feature Fusion** framework combining:
 
 | Feature | Description |
 |---|---|
-| 🧠 **Deep Learning Analysis** | ResNet50-based feature extraction for visual mammogram patterns |
+| 🧠 **Deep Learning Analysis** | ResNet50-based feature extraction for visual imaging patterns |
 | 🔬 **Radiomic Texture Features** | Mathematical extraction of tumor morphology and tissue density |
-| 🔀 **Hybrid Feature Fusion** | Synergistic combination of deep and radiomic features |
-| 👁️ **Explainable AI — Grad-CAM** *(In Progress)* | Class activation maps showing exactly where the model is focusing |
+| 🔀 **Hybrid Diagnostic Mode** | Upload both clinical data and mammograms simultaneously for synthesized analysis with significantly higher predictive accuracy |
 | 🩺 **Clinical Decision Support** | AI as a second pair of eyes — empowering clinicians, not replacing them |
 
 ---

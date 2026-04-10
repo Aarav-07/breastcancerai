@@ -43,7 +43,7 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-6">Resources</h4>
             <ul className="space-y-4">
                <li>
-                  <Link href="https://github.com/Shreyas-29/linkify" target="_blank" className="flex items-center text-sm hover:text-[#EC4899] transition-colors group">
+                  <Link href="https://github.com/arush-07/pbl-2" target="_blank" className="flex items-center text-sm hover:text-[#EC4899] transition-colors group">
                      <Github className="w-4 h-4 mr-2 text-slate-400 group-hover:text-[#EC4899]" />
                      GitHub Repository
                   </Link>
